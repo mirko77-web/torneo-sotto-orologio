@@ -133,20 +133,24 @@ Preparatevi a dare tutto: in palio ci sono premi in denaro e coppe per le miglio
     <p className="section-text">alcune foto del Torneo Sotto l'Orologio 2025.</p>
     
     <div className="gallery-grid">
-      {/* Qui scrivi i nomi esatti dei file che hai in public.
-          Esempio: '1.jpg', '2.png', 'foto_campo.jpg', ecc.
-      */}
-      {[
-        'public/_DSC6059.JPG', 'public/_DSC6081.JPG', 'public/_DSC6235.JPG', 
-        'public/_DSC6135.JPG', 'public/_DSC6260.JPG', 'public/_DSC6288.JPG', 
-        'public/_DSC6327.JPG', 'public/_DSC6507.JPG', 'public/_DSC6557.JPG', 'public/_DSC6559.JPG'
-      ].map((nomeFoto, index) => (
-        <div key={index} className="gallery-card">
-          <img 
-            src={`/${nomeFoto}`} 
-            alt={`Scatto torneo ${index + 1}`} 
-            className="gallery-img" 
-          />
+  {[
+    '_DSC6059.JPG', '_DSC6081.JPG', '_DSC6235.JPG', 
+    '_DSC6135.JPG', '_DSC6260.JPG', '_DSC6288.JPG', 
+    '_DSC6327.JPG', '_DSC6507.JPG', '_DSC6557.JPG', '_DSC6559.JPG'
+  ].map((nomeFoto, index) => (
+    <div key={index} className="gallery-card">
+      <img 
+        src={`/${nomeFoto}`} // Ora caricherà correttamente da /_DSC6059.JPG
+        alt={`Scatto torneo ${index + 1}`} 
+        className="gallery-img" 
+        loading="lazy" // Velocizza il caricamento su cellulare
+      />
+      <div className="gallery-overlay">
+        <span>SOTTO L'OROLOGIO 2025</span>
+      </div>
+    </div>
+  ))}
+</div>
           <div className="gallery-overlay">
             <span>SOTTO L'OROLOGIO 2025</span>
           </div>
