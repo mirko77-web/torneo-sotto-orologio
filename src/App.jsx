@@ -130,36 +130,29 @@ Preparatevi a dare tutto: in palio ci sono premi in denaro e coppe per le miglio
 <section id="galleria" className="page-section page-section--dark">
   <div className="section-inner">
     <h2 className="section-title">Galleria</h2>
-    <p className="section-text">alcune foto del Torneo Sotto l'Orologio 2025.</p>
+    <p className="section-text">Alcune foto del Torneo Sotto l'Orologio 2025.</p>
     
     <div className="gallery-grid">
-  {[
-    '_DSC6059.JPG', '_DSC6081.JPG', '_DSC6235.JPG', 
-    '_DSC6135.JPG', '_DSC6260.JPG', '_DSC6288.JPG', 
-    '_DSC6327.JPG', '_DSC6507.JPG', '_DSC6557.JPG', '_DSC6559.JPG'
-  ].map((nomeFoto, index) => (
-    <div key={index} className="gallery-card">
-      <img 
-        src={`/${nomeFoto}`} // Ora caricherà correttamente da /_DSC6059.JPG
-        alt={`Scatto torneo ${index + 1}`} 
-        className="gallery-img" 
-        loading="lazy" // Velocizza il caricamento su cellulare
-      />
-      <div className="gallery-overlay">
-        <span>SOTTO L'OROLOGIO 2025</span>
-      </div>
-    </div>
-  ))}
-</div>
+      {[
+        '_DSC6059.JPG', '_DSC6081.JPG', '_DSC6235.JPG', 
+        '_DSC6135.JPG', '_DSC6260.JPG', '_DSC6288.JPG', 
+        '_DSC6327.JPG', '_DSC6507.JPG', '_DSC6557.JPG', '_DSC6559.JPG'
+      ].map((nomeFoto, index) => (
+        <div key={index} className="gallery-card">
+          <img 
+            src={`/${nomeFoto}`} 
+            alt={`Scatto torneo ${index + 1}`} 
+            className="gallery-img" 
+            loading="lazy"
+          />
           <div className="gallery-overlay">
             <span>SOTTO L'OROLOGIO 2025</span>
           </div>
         </div>
-      ))}
+      ))} {/* <--- Questa riga deve avere ESATTAMENTE queste parentesi */}
     </div>
   </div>
 </section>
-     
 
       {/* ── SPONSOR ── */}
       <section id="sponsor" className="page-section">
