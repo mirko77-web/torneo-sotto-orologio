@@ -1,0 +1,203 @@
+/* --- RESET E IMPOSTAZIONI DI BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    /* --- LA TUA FOTO COME SFONDO DI TUTTA LA PAGINA --- */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('immagini/sfondo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* La foto resta ferma mentre i testi scorrono */
+    background-repeat: no-repeat;
+}
+
+/* --- SEZIONE COPERTINA (Logo e Titolo Iniziale) --- */
+.copertina {
+    height: 100vh; /* Occupa tutto lo schermo all'inizio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.contenuto-copertina {
+    z-index: 2;
+}
+
+/* --- TITOLI STREET --- */
+.logo-iniziale {
+    width: 140px;
+    margin-bottom: 15px;
+}
+
+/* Stile base per il contenitore del titolo */
+.blur-text {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 3.5rem; /* Regola la grandezza */
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column; /* Mette le parole una sotto l'altra */
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* Stile per ogni singola parola */
+.blur-text span {
+    filter: blur(12px); /* Parte molto sfocata */
+    opacity: 0;         /* Parte invisibile */
+    display: inline-block;
+    
+    /* Applichiamo l'animazione */
+    animation: blur-in-reveal 1.2s forwards;
+    
+    /* Usiamo il ritardo che abbiamo scritto nell'HTML */
+    animation-delay: var(--delay);
+}
+
+/* LA MAGIA: Definizione dell'animazione */
+@keyframes blur-in-reveal {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+        transform: scale(0.8); /* Parte leggermente più piccola */
+    }
+    50% {
+        filter: blur(4px);
+        opacity: 0.5;
+    }
+    100% {
+        filter: blur(0px);    /* Diventa nitido */
+        opacity: 1;           /* Diventa visibile */
+        transform: scale(1);   /* Torna alla grandezza normale */
+    }
+}
+.titolo-grande {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 3rem;
+    color: #ffffff;
+    line-height: 1.1;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8); /* Ombra per staccare dalla foto */
+    margin-bottom: 10px;
+}
+
+.tagline-street {
+    font-family: 'Bungee Inline', cursive;
+    color: #ff4757; /* Rosso acceso */
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* --- BOTTONE GIALLO --- */
+#btn-scopri {
+    background-color: #f1c40f; 
+    color: black;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* --- MENU A TENDINA (TRASPARENTI) --- */
+#menu-principale {
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.nascosto { display: none; }
+
+details {
+    /* Vetro opaco (Effetto Glassmorphism) */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); /* Sfoca leggermente la foto dietro */
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+summary {
+    padding: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Freccetta a destra */
+summary::after { content: '▼'; font-size: 0.8rem; color: #f1c40f; }
+
+.contenuto-tendina {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+}
+
+/* Bottoni Social/Mappa */
+.link-bottone {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ff4757;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+
+/* --- STILI PER LA NUOVA LOCANDINA --- */
+.area-immagine {
+    padding: 10px; /* Riduce il padding interno per dare più spazio all'immagine */
+    text-align: center;
+}
+
+.img-fluida {
+    max-width: 100%; /* L'immagine non sarà mai più larga del suo contenitore */
+    height: auto;    /* Mantiene le proporzioni correte */
+    border-radius: 8px; /* Arrotonda leggermente gli angoli */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Aggiunge profondità */
+}
+
+/* Specifica per la locandina se vogliamo che sia un po' più piccola su schermi grandi */
+.img-locandina {
+    max-height: 80vh; /* Non più alta dell'80% dello schermo per non dover scorrere troppo */
+}
+
+/* --- STILI PER IL TASTO GOOGLE DRIVE --- */
+.area-foto {
+    text-align: center;
+}
+
+.link-bottone.drive {
+    background-color: #868686; /* Sfondo bianco per staccare */
+    color: #fdfdfd;            
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 2px solid #ffffff; /* Bordo blu */
+}
+
+.link-bottone.drive:hover {
+    transform: translateY(-3px); /* Si alza leggermente */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.704);
+    background-color: #ed050590; /* Grigio chiarissimo al passaggio */
+}
+
+/* Aggiunge un'icona Drive stilizzata (opzionale, se usi FontAwesome o simili, altrimenti usiamo l'emoji) */
