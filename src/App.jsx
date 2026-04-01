@@ -132,31 +132,32 @@ export default function App() {
       </section>
 
       {/* ── GALLERIA ── */}
-      <section id="galleria" className="page-section page-section--dark">
-        <div className="section-inner">
-          <h2 className="section-title">Galleria</h2>
-          <p className="section-text">Alcune foto del Torneo Sotto l'Orologio 2025.</p>
-          <div className="gallery-grid">
-            {[
-              '_DSC6059.JPG', '_DSC6081.JPG', '_DSC6235.JPG',
-              '_DSC6135.JPG', '_DSC6260.JPG', '_DSC6288.JPG',
-              '_DSC6327.JPG', '_DSC6507.JPG', '_DSC6557.JPG', '_DSC6559.JPG'
-            ].map((nomeFoto, index) => (
-              <div key={index} className="gallery-card">
-                <img
-                  src={`/${nomeFoto}`}
-                  alt={`Scatto torneo ${index + 1}`}
-                  className="gallery-img"
-                  loading="lazy"
-                />
-                <div className="gallery-overlay">
-                  <span>SOTTO L'OROLOGIO 2025</span>
-                </div>
-              </div>
-            ))}
+<section id="galleria" className="page-section page-section--dark">
+  <div className="section-inner">
+    <h2 className="section-title">Galleria</h2>
+    <p className="section-text">Alcune foto del Torneo Sotto l'Orologio 2025.</p>
+    <div className="gallery-grid">
+      {[
+        '_DSC6059.JPG', '_DSC6081.JPG', '_DSC6235.JPG',
+        '_DSC6135.JPG', '_DSC6260.JPG', '_DSC6288.JPG',
+        '_DSC6327.JPG', '_DSC6507.JPG', '_DSC6557.JPG', '_DSC6559.JPG'
+      ].map((nomeFoto, index) => (
+        <div key={index} className="gallery-card">
+          <img
+            src={`/${nomeFoto}`}
+            alt={`Scatto torneo ${index + 1}`}
+            className="gallery-img"
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="gallery-overlay">
+            <span>SOTTO L'OROLOGIO 2025</span>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ── SPONSOR ── */}
       <section id="sponsor" className="page-section">
@@ -184,13 +185,13 @@ export default function App() {
               rel="noopener noreferrer"
               className="contact-item"
             >
-              <img src="src/insta.webp" width={80} height={80} alt="instagram" />
+              <img src="public/insta.webp" width={80} height={80} alt="instagram" />
             </a>
             <a
               href="whatsapp://send?phone=+3478345014&text=Ciao%20Torneo%20Sotto%20l'Orologio!"
               className="contact-item"
             >
-              <img src="src/assets/WhatsApp.svg.webp" width={80} height={80} alt="whatsapp" />
+              <img src="public/WhatsApp.svg.webp" width={80} height={80} alt="whatsapp" />
             </a>
           </div>
         </div>
