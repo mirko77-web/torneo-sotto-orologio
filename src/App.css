@@ -9,7 +9,7 @@
 
 html, body {
   background: #000;
-  overflow-x: hidden; /* Fondamentale: elimina la colonna bianca a destra */
+  overflow-x: hidden;
   width: 100%;
   position: relative;
 }
@@ -26,6 +26,7 @@ html, body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .overlay {
@@ -36,29 +37,29 @@ html, body {
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo {
-  width: 250px; /* Corretto: aggiunto px */
-  height: 250px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  margin: 0 auto 24px;
   display: block;
+  margin-bottom: 12px;
   animation: fadeDown 0.8s ease forwards;
 }
 
 .blur-text {
-  filter: url(#grunge);
   font-family: 'Anton', sans-serif;
   font-size: clamp(3rem, 12vw, 7rem);
   text-transform: uppercase;
   line-height: 0.85;
   letter-spacing: -1px;
   color: white;
+  margin-bottom: 10px;
 }
 
 .blur-text span {
@@ -71,55 +72,100 @@ html, body {
   text-shadow: 2px 4px 8px black;
 }
 
-/* ── TASTO MENU (TRIGGER) ── */
-button[aria-label*="menu"], 
-.menu-button-text {
-  font-family: 'Anton', sans-serif !important;
-  font-size: 2.5rem !important;
-  letter-spacing: 3px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-  cursor: pointer;
-}
-
-button[aria-label*="menu"]:hover {
-  transform: scale(1.3) rotate(-3deg) !important;
-  color: #ff3e3e !important;
-}
-
-/* ── PANNELLO MENU APERTO ── */
-.staggered-menu-panel {
-  width: 100% !important;
-  max-width: 450px !important;
-  padding: 80px 40px !important;
-  visibility: hidden; /* Fix: non occupa spazio da chiuso */
-  pointer-events: none;
-  z-index: 9999;
-  transition: all 0.4s ease;
-}
-
-/* Quando il menu è aperto (cambia classe se necessario) */
-.staggered-menu-wrapper.is-open .staggered-menu-panel,
-[data-state="open"] .staggered-menu-panel {
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.staggered-menu-item a {
-  font-family: 'Anton', sans-serif !important;
-  font-size: clamp(2rem, 7vw, 3.8rem) !important; 
-  line-height: 1.1 !important;
+.subtitle {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: white !important;
-  white-space: nowrap; /* REGOLAMENTO non si taglia */
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
+  margin-bottom: 4px;
 }
 
-.staggered-menu-item a:hover {
+.tags {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  color: rgb(235, 235, 235);
+  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+  letter-spacing: 3px;
+  margin-bottom: 0;
+}
+
+/* ── RESPECT — completamente nel flusso normale ── */
+.respect {
+  display: block;
+  font-family: 'Anton', sans-serif;
+  color: #ff0000;
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  letter-spacing: 12px;
+  text-shadow: 0 0 20px rgba(255, 62, 62, 0.5);
+  margin-top: 6px;
+  margin-bottom: 6px;
+  /* Nessun position/z-index — rimane nel flusso flex */
+  opacity: 0;
+  animation: respectPulse 0.8s ease 1.8s forwards;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.event-date {
+  font-family: 'Anton', sans-serif;
+  color: white;
+  font-size: clamp(0.95rem, 2.5vw, 1.4rem);
+  letter-spacing: 3px;
+}
+
+.event-place {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.7);
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+/* ── MENU FIX (ID override) ── */
+#staggered-menu-panel {
+  background: #111111 !important;
+  background-color: #111111 !important;
+}
+
+#staggered-menu-panel a,
+#staggered-menu-panel span,
+#staggered-menu-panel li,
+#staggered-menu-panel p,
+#staggered-menu-panel h3 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#staggered-menu-panel a:hover {
   color: #ff3e3e !important;
-  transform: translateX(20px) skewX(-10deg);
+}
+
+#staggered-menu-panel .sm-panel-itemLabel {
+  font-family: 'Anton', sans-serif !important;
+  font-size: clamp(2rem, 7vw, 3.5rem) !important;
+  color: #ffffff !important;
+  white-space: nowrap !important;
+}
+
+#staggered-menu-panel .sm-panel-itemWrap {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 0;
+  overflow: hidden;
+}
+
+#staggered-menu-panel .sm-panel-item:hover .sm-panel-itemLabel {
+  color: #ff3e3e !important;
+  transform: translateX(16px) skewX(-8deg);
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
 /* ── GALLERIA ── */
@@ -143,12 +189,39 @@ button[aria-label*="menu"]:hover {
   object-fit: cover;
   display: block;
   opacity: 1 !important;
-  filter: none !important; /* Forza colore su mobile se necessario */
+  filter: none !important;
   transition: transform 0.6s ease;
 }
 
 .gallery-card:hover .gallery-img {
   transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  transition: background 0.3s ease;
+}
+
+.gallery-overlay span {
+  color: white;
+  font-family: 'Anton', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+  background: rgba(0,0,0,0.4);
+}
+
+.gallery-card:hover .gallery-overlay span {
+  opacity: 1;
 }
 
 /* ── LOCANDINA ── */
@@ -165,23 +238,6 @@ button[aria-label*="menu"]:hover {
   box-shadow: 0 0 20px rgba(255,62,62,0.3);
 }
 
-/* ── RESPONSIVE MOBILE ── */
-@media (max-width: 768px) {
-  .staggered-menu-panel {
-    max-width: 100vw !important;
-    width: 100% !important;
-    padding: 100px 20px !important;
-  }
-
-  .staggered-menu-item a {
-    font-size: 2.2rem !important;
-  }
-
-  .section-title {
-    font-size: 2.8rem !important;
-  }
-}
-
 /* ── ANIMAZIONI ── */
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-30px); }
@@ -192,11 +248,122 @@ button[aria-label*="menu"]:hover {
   to { filter: blur(0); opacity: 1; transform: scale(1); }
 }
 
-/* Stili generici per sezioni (già presenti nel tuo file) */
-.page-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: #111; }
-.page-section--dark { background: #0a0a0a; }
-.section-inner { max-width: 900px; width: 100%; text-align: center; }
-.section-title { font-family: 'Anton', sans-serif; font-size: clamp(2.5rem, 8vw, 5rem); color: white; text-transform: uppercase; margin-bottom: 30px; }
-.section-text { color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; line-height: 1.8; margin-bottom: 40px; }
-.respect { font-family: 'Anton', sans-serif; color: #ff3e3e; font-size: clamp(2rem, 9vw, 4rem); letter-spacing: 12px; margin-top: 16px; text-shadow: 0 0 20px rgba(255, 62, 62, 0.5); opacity: 0; animation: respectPulse 0.8s ease 1.8s forwards; }
-@keyframes respectPulse { 0% { opacity: 5; letter-spacing: 20px; } 100% { opacity: 1; letter-spacing: 12px; } }
+@keyframes respectPulse {
+  0%   { opacity: 0; letter-spacing: 20px; }
+  100% { opacity: 1; letter-spacing: 12px; }
+}
+
+/* ── SEZIONI GENERICHE ── */
+.page-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background: #111;
+}
+
+.page-section--dark {
+  background: #0a0a0a;
+}
+
+.section-inner {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.section-text {
+  color: rgba(255,255,255,0.7);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* ── REGOLAMENTO ── */
+.rules-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.rule-item {
+  background: #1a1a1a;
+  border-left: 4px solid #ff3e3e;
+  padding: 16px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  border-radius: 0 6px 6px 0;
+  transition: background 0.2s ease;
+}
+
+.rule-item:hover {
+  background: #222222;
+}
+
+/* ── UNICO BLOCCO MOBILE ── */
+@media (max-width: 768px) {
+
+  .logo {
+    width: 90px !important;
+    height: 90px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .blur-text {
+    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
+    line-height: 0.9 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .hero-content {
+    padding: 20px 16px !important;
+  }
+
+  .respect {
+    font-size: clamp(1.2rem, 6vw, 1.8rem) !important;
+    letter-spacing: 5px !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .subtitle {
+    font-size: 0.7rem !important;
+    letter-spacing: 3px !important;
+  }
+
+  .tags {
+    font-size: 0.65rem !important;
+  }
+
+  .event-date {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+  }
+
+  .event-place {
+    font-size: 0.7rem !important;
+  }
+
+  #staggered-menu-panel .sm-panel-itemLabel {
+    font-size: 2rem !important;
+    white-space: normal !important;
+  }
+
+  .section-title {
+    font-size: 2.5rem !important;
+  }
+}
