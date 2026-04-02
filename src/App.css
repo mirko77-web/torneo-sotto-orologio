@@ -54,14 +54,15 @@ html, body {
 
 .blur-text {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(3rem, 12vw, 7rem);
+  font-size: clamp(2rem, 7.5vw, 7rem);
   text-transform: uppercase;
   line-height: 0.85;
   letter-spacing: -1px;
   color: white;
   margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
 }
-
 .blur-text span {
   display: block;
   opacity: 0;
@@ -75,7 +76,7 @@ html, body {
 .subtitle {
   display: block;
   font-family: 'Inter', sans-serif;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.90);
   font-size: clamp(0.85rem, 2vw, 1.1rem);
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -85,7 +86,7 @@ html, body {
 .tags {
   display: block;
   font-family: 'Inter', sans-serif;
-  color: rgb(235, 235, 235);
+   color: rgba(255, 255, 255, 0.90);
   font-size: clamp(0.75rem, 1.8vw, 0.95rem);
   letter-spacing: 3px;
   margin-bottom: 0;
@@ -115,9 +116,11 @@ html, body {
 
 .event-date {
   font-family: 'Anton', sans-serif;
-  color: white;
-  font-size: clamp(0.95rem, 2.5vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: clamp(1.4rem, 4vw, 2.2rem);   /* più grande */
   letter-spacing: 3px;
+  -webkit-text-stroke: 1.5px black;         /* contorno nero */
+  paint-order: stroke fill;                 /* contorno sotto il colore */
 }
 
 .event-place {
@@ -324,11 +327,9 @@ html, body {
   }
 
   .blur-text {
-    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
-    line-height: 0.9 !important;
-    margin-bottom: 6px !important;
-  }
-
+  font-size: clamp(2.5rem, 9vw, 6rem);  
+  white-space: nowrap;                   /* forza tutto su una riga senza taglio */
+}
   .hero-content {
     padding: 20px 16px !important;
   }
@@ -366,6 +367,17 @@ html, body {
   .section-title {
     font-size: 2.5rem !important;
   }
+
+   .sponsor-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .sponsor-card {
+    padding: 16px;
+    min-height: 90px;
+  }
+
 }
 .contact-list {
   display: flex;
@@ -432,4 +444,152 @@ html, body {
   object-fit: contain;
   transition: filter 0.3s ease;
   mix-blend-mode: lighten;
+}
+
+/* ── ALBO D'ORO ── */
+.albo-year {
+  font-family: 'Anton', sans-serif;
+  color: #ff3e3e;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  letter-spacing: 8px;
+  margin-bottom: 50px;
+}
+
+.winner-block {
+  position: relative;
+  border: 2px solid #ff3e3e;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  aspect-ratio: 16 / 7;   /* proporzionato per foto di gruppo */
+}
+
+.winner-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.winner-block:hover .winner-photo {
+  transform: scale(1.04);
+}
+
+.winner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px 32px;
+}
+
+.winner-label {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 6px;
+  color: #ff3e3e;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.winner-name {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.winner-block::before {
+  content: '🏆';
+  position: absolute;
+  top: -10px; right: 20px;
+  font-size: 5rem;
+  opacity: 0.08;
+}
+
+.winner-label {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 6px;
+  color: #ff3e3e;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.winner-name {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: white;
+  letter-spacing: 2px;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.award-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.award-card:hover {
+  border-color: #ff3e3e;
+  transform: translateY(-4px);
+}
+
+.award-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.award-info {
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.award-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  color: #ff3e3e;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.award-player {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.award-detail {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .blur-text {
+    font-size: clamp(1.5rem, 7.5vw, 2.8rem) !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-content {
+    padding: 20px 10px !important;
+    width: 100%;
+  }
 }

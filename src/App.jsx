@@ -11,6 +11,7 @@ const menuItems = [
   { label: 'Galleria',     link: '#galleria',    ariaLabel: 'Galleria Foto' },
   { label: 'Sponsor',      link: '#sponsor',     ariaLabel: 'Sponsor' },
   { label: 'Contatti',     link: '#contatti',    ariaLabel: 'Contatti' },
+  { label: 'Albo d\'Oro', link: '#albo-doro', ariaLabel: 'Albo d\'Oro' },
 ];
 
 const socialItems = [
@@ -35,6 +36,39 @@ const sponsors = [
   { id: 3, name: "Sponsor 3", logo: "/sponsor3.jpg" },
   { id: 4, name: "Sponsor 4", logo: "/sponsor4.png" },
 ];
+
+const alboDoro2025 = {
+  squadraVincitrice: " SNACK BAR - 1° CLASSIFICATO ",
+  fotoSquadra: "/squadra-vincitrice.jpg",
+  awards: [
+    {
+      role: "Miglior Portiere",
+      name: "GIUSEPPE NIGRO",
+      team: "SNACK BAR",
+      detail: "",
+      photo: "public/port.png", 
+    },
+    {
+      role: "Miglior Giocatore",
+      name: "JASON CARROZZO",
+      team: "SNACK BAR",
+
+      photo: "public/capoc.png",
+    },
+    {
+      role: "Capocannoniere",
+      name: "JASON CARROZZO",
+      team: "SNACK BAR",
+      photo: "public/capoc.png",
+    },
+    {
+      role: "Miglior Allenatore",
+      name: "MICHELE OLIVIERI",
+      team: "MA STAI SCHERSANTOS FC",
+      photo: "public/allena.png",
+    },
+  ],
+};
 
 export default function App() {
   return (
@@ -138,6 +172,36 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── ALBO D'ORO ── */}
+<section id="albo-doro" className="page-section page-section--dark">
+  <div className="section-inner">
+    <h2 className="section-title">Albo d'Oro</h2>
+    <p className="albo-year">EDIZIONE 2025</p>
+
+<div className="winner-block">
+  <img src="public/vince.png" alt="Squadra Vincitrice 2025" className="winner-photo" />
+
+  <div className="winner-overlay">
+
+    <p className="winner-name">{alboDoro2025.squadraVincitrice}</p>
+  </div>
+</div>
+
+    <div className="awards-grid">
+      {alboDoro2025.awards.map((a, i) => (
+        <div key={i} className="award-card">
+          <img src={a.photo} alt={a.name} className="award-photo" />
+          <div className="award-info">
+            <p className="award-role">{a.icon} &nbsp;{a.role}</p>
+            <p className="award-player">{a.name}</p>
+            <p className="award-detail">{a.detail ? `${a.detail} · ` : ''}{a.team}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
       {/* ── GALLERIA ── */}
       <section id="galleria" className="page-section page-section--dark">
         <div className="section-inner">
@@ -208,7 +272,7 @@ export default function App() {
 
       {/* ── FOOTER ── */}
       <footer className="footer">
-        <img src="public/sotto l'rologio.png" width="100" height="100" alt="Torneo Sotto l'Orologio" />
+        <img src="/sotto l'rologio.png" width="100" height="100" alt="Torneo Sotto l'Orologio" />
         <p>© 2026 Torneo Sotto l'Orologio — Avetrana (TA)</p>
       </footer>
 
