@@ -580,6 +580,10 @@ html, body {
   font-size: 0.82rem;
   color: rgba(255,255,255,0.45);
   letter-spacing: 1px;
+  white-space: nowrap;      /* non va a capo */
+  overflow: hidden;         /* nasconde l'eccesso */
+  text-overflow: ellipsis;  /* aggiunge i ... */
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
