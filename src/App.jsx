@@ -39,33 +39,33 @@ const sponsors = [
 
 const alboDoro2025 = {
   squadraVincitrice: " SNACK BAR - 1° CLASSIFICATO ",
-  fotoSquadra: "/squadra-vincitrice.jpg",
+  fotoSquadra: "/vince.png",
   awards: [
     {
       role: "Miglior Portiere",
       name: "GIUSEPPE NIGRO",
       team: "SNACK BAR",
       detail: "",
-      photo: "public/port.png", 
+      photo: "/port.png", 
     },
     {
       role: "Miglior Giocatore",
       name: "JASON CARROZZO",
       team: "SNACK BAR",
 
-      photo: "public/capoc.png",
+      photo: "/capoc.png",
     },
     {
       role: "Capocannoniere",
       name: "JASON CARROZZO",
       team: "SNACK BAR",
-      photo: "public/capoc.png",
+      photo: "/capoc.png",
     },
     {
       role: "Miglior Allenatore",
       name: "MICHELE OLIVIERI",
       team: "MA STAI SCHERSANTOS FC",
-      photo: "public/allena.png",
+      photo: "/allena.png",
     },
   ],
 };
@@ -179,7 +179,7 @@ export default function App() {
     <p className="albo-year">EDIZIONE 2025</p>
 
 <div className="winner-block">
-  <img src="public/vince.png" alt="Squadra Vincitrice 2025" className="winner-photo" />
+  <img src="/vince.png" alt="Squadra Vincitrice 2025" className="winner-photo" />
 
   <div className="winner-overlay">
 
