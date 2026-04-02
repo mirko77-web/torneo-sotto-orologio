@@ -56,7 +56,7 @@ const alboDoro2025 = {
       photo: "/capoc.png",
     },
     {
-      role: "Capocannoniere",
+      role: "miglior Marcatore",
       name: "JASON CARROZZO",
       team: "SNACK BAR",
       photo: "/capoc.png",
