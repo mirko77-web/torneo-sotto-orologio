@@ -72,23 +72,25 @@ html, body {
   animation-delay: var(--delay, 0s);
   text-shadow: 2px 4px 8px black;
 }
-
+/* ── SUBTITLE & TAGS FIX ── */
 .subtitle {
   display: block;
   font-family: 'Inter', sans-serif;
-  color: rgba(255, 255, 255, 0.90);
-  font-size: clamp(0.85rem, 2vw, 1.1rem);
-  letter-spacing: 4px;
+  color: #ffffff;                          /* bianco pieno */
+  font-size: clamp(1rem, 2.5vw, 1.3rem);  /* più grande */
+  letter-spacing: 5px;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8); /* leggibile su qualsiasi sfondo */
 }
 
 .tags {
   display: block;
   font-family: 'Inter', sans-serif;
-   color: rgba(255, 255, 255, 0.90);
-  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
-  letter-spacing: 3px;
+  color: #ffffff;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  letter-spacing: 4px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
   margin-bottom: 0;
 }
 
