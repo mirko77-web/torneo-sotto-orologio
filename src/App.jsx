@@ -33,7 +33,7 @@ const regole = [
 const sponsors = [
   { id: 1, name: "Sponsor 1", logo: "/sponsor1.jpg" },
   { id: 2, name: "Sponsor 2", logo: "/sponsor2.png" },
-  { id: 3, name: "Sponsor 3", logo: "/sponsor3.jpg" },
+  { id: 3, name: "Sponsor 3", logo: "/sponsor.jpg" },
   { id: 4, name: "Sponsor 4", logo: "/sponsor4.png" },
 ];
 
@@ -230,20 +230,31 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── SPONSOR ── */}
-      <section id="sponsor" className="page-section">
-        <div className="section-inner">
-          <h2 className="section-title">Sponsor</h2>
-          <p className="section-text">Vuoi sponsorizzare il torneo? Contattaci!</p>
-          <div className="sponsor-grid">
-            {sponsors.map(s => (
-              <div key={s.id} className="sponsor-card">
-                <img src={s.logo} alt={s.name} />
-              </div>
-            ))}
-          </div>
+      
+
+  <section id="sponsor" className="page-section">
+  <div className="section-inner">
+    <h2 className="section-title">Sponsor</h2>
+    <p className="section-text">Vuoi sponsorizzare il torneo? Contattaci!</p>
+
+    {/* ── MAIN SPONSOR ── */}
+    <div className="main-sponsor">
+      <h3 className="main-sponsor-title">Main Sponsor</h3>
+      <div className="main-sponsor-logo">
+        <img src="/sponsor.jpg" alt={mainSponsor.name} />
+      </div>
+    </div>
+
+    {/* ── ALTRI SPONSOR ── */}
+    <div className="sponsor-grid">
+      {sponsors.map(s => (
+        <div key={s.id} className="sponsor-card">
+          <img src={s.logo} alt={s.name} />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ── CONTATTI ── */}
       <section id="contatti" className="page-section page-section--dark">
