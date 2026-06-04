@@ -1,6 +1,8 @@
 import React from 'react';
 import { StaggeredMenu } from './StaggeredMenu';
 import './App.css';
+import { useState, useEffect } from 'react';
+import RegistrationPopup from './RegistrationPopup';
 
 const menuItems = [
   { label: 'Home',         link: '#home',        ariaLabel: 'Home' },
@@ -12,6 +14,7 @@ const menuItems = [
   { label: 'Sponsor',      link: '#sponsor',     ariaLabel: 'Sponsor' },
   { label: 'Contatti',     link: '#contatti',    ariaLabel: 'Contatti' },
   { label: 'Albo d\'Oro', link: '#albo-doro', ariaLabel: 'Albo d\'Oro' },
+  { label: 'Iscriviti',    link: '#iscriviti',   ariaLabel: 'Iscriviti al torneo' }
 ];
 
 const socialItems = [
@@ -71,9 +74,15 @@ const alboDoro2025 = {
 };
 
 export default function App() {
+  const [showPopup, setShowPopup] = useState(false);
+useEffect(() => {
+  const timer = setTimeout(() => setShowPopup(true), 800);
+  return () => clearTimeout(timer);
+}, []);
+
   return (
     <div className="main-container">
-
+{showPopup && <RegistrationPopup onClose={() => setShowPopup(false)} />}
       {/* ── MENU ── */}
       <StaggeredMenu
         position="right"
@@ -276,6 +285,18 @@ export default function App() {
           </div>
         </div>
       </section>
+  {/* ── iscriviti ── */}
+<section id="iscriviti" className="page-section">
+  <div className="section-inner">
+    <h2 className="section-title">Iscriviti al torneo</h2>
+    <p className="section-text">Compila il form di iscrizione per partecipare al torneo.</p>
+    <button className="reg-submit" onClick={() => setShowPopup(true)}>
+      🏆 &nbsp;Iscriviti al torneo
+    </button>
+  </div>
+</section>
+  
+
 
       {/* ── FOOTER ── */}
       <footer className="footer">

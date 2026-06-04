@@ -640,3 +640,116 @@ html, body {
   }
 }
 }
+
+/* ── POPUP ISCRIZIONE ── */
+.reg-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.80);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+.reg-popup {
+  background: #111; border: 2px solid #d4ff00; border-radius: 16px;
+  width: 100%; max-width: 620px; max-height: 90vh; overflow-y: auto;
+  position: relative;
+}
+.reg-close {
+  position: absolute; top: 14px; right: 16px;
+  background: none; border: none; color: rgba(5, 0, 0, 0.5);
+  font-size: 1.1rem; cursor: pointer; z-index: 1;
+}
+.reg-close:hover { color: #fff; }
+.reg-header {
+  background: #ffe100; padding: 24px 28px; text-align: center;
+}
+.reg-badge {
+  display: inline-block; background: #fff; color: #f1ed02;
+  font-family: 'Anton', sans-serif; font-size: 11px; letter-spacing: 3px;
+  padding: 3px 14px; border-radius: 20px; margin-bottom: 10px;
+}
+.reg-header h2 {
+  color: #fff; font-family: 'Anton', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 2rem); letter-spacing: 2px; text-transform: uppercase;
+}
+.reg-header p { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-top: 6px; }
+.reg-body { padding: 24px 28px; }
+.reg-field { margin-bottom: 16px; }
+.reg-field label, .reg-body > label {
+  display: block; font-family: 'Anton', sans-serif;
+  color: #ffff00; font-size: 0.7rem; letter-spacing: 3px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.reg-field input, .reg-players-grid input {
+  background: #1a1a1a; border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px; padding: 10px 14px; color: #fff;
+  font-family: 'Inter', sans-serif; font-size: 0.9rem;
+  outline: none; transition: border-color 0.2s;
+}
+.reg-field input:focus { border-color: #ff3e3e; }
+.reg-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 18px 0; }
+.reg-players-header {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Anton', sans-serif; color: #ff3e3e;
+  font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 10px;
+}
+.reg-count {
+  background: #ff3e3e; color: #fff;
+  padding: 2px 10px; border-radius: 20px; font-size: 12px;
+}
+.reg-players-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.reg-player-row {
+  display: flex; align-items: center; gap: 8px;
+  background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px; padding: 8px 12px;
+  transition: border-color 0.2s;
+}
+.reg-player-row:focus-within { border-color: #ff3e3e; }
+.reg-player-num {
+  font-family: 'Anton', sans-serif; color: #ff3e3e; font-size: 0.75rem; min-width: 20px;
+}
+.reg-player-row input {
+  background: transparent; border: none; color: #fff;
+  font-size: 0.85rem; width: 100%; outline: none; padding: 0;
+}
+.reg-player-row input::placeholder { color: rgba(255,255,255,0.2); }
+.reg-logo-box {
+  background: #1a1a1a; border: 1.5px dashed rgba(255,62,62,0.4);
+  border-radius: 12px; padding: 18px; text-align: center; margin-top: 6px;
+}
+.reg-logo-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+.reg-logo-box p { color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.5; }
+.reg-logo-box strong { color: #ff3e3e; }
+.reg-logo-btns { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
+.reg-logo-btn {
+  padding: 8px 18px; border-radius: 8px; font-family: 'Anton', sans-serif;
+  font-size: 0.8rem; letter-spacing: 1px; cursor: pointer;
+  background: transparent; border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.6); transition: all 0.2s;
+}
+.reg-logo-btn.active { background: #ff3e3e; border-color: #ff3e3e; color: #fff; }
+.reg-logo-msg { margin-top: 10px; font-size: 0.8rem; border-radius: 8px; padding: 8px 12px; }
+.reg-logo-msg--yes { background: rgba(255,62,62,0.12); color: #ff7a7a; border: 1px solid rgba(255,62,62,0.3); }
+.reg-logo-msg--no { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+.reg-submit {
+  width: 100%; padding: 14px; background: #d5e100; color: #fff;
+  border: none; border-radius: 10px; font-family: 'Anton', sans-serif;
+  font-size: 1rem; letter-spacing: 3px; cursor: pointer; margin-top: 20px;
+  transition: background 0.2s, transform 0.1s;
+}
+.reg-submit:hover { background: #e02020; }
+.reg-submit:active { transform: scale(0.98); }
+.reg-note {
+  text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.3);
+  margin-top: 10px; letter-spacing: 1px;
+}
+.reg-success { text-align: center; padding: 48px 28px; }
+.reg-trophy { font-size: 4rem; margin-bottom: 16px; }
+.reg-success h3 {
+  font-family: 'Anton', sans-serif; color: #ff3e3e;
+  font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 10px;
+}
+.reg-success p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6; }
+.reg-success strong { color: #fff; font-family: 'Anton', sans-serif; }
