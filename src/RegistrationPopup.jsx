@@ -34,15 +34,16 @@ export default function RegistrationPopup({ onClose }) {
     ? 'SI - ha gia logo' 
     : 'Non specificato';
 
-  const messaggio = 
-    `⚽ NUOVA ISCRIZIONE TORNEO 2026 %0A` +
-    `━━━━━━━━━━━━━━━━%0A` +
-    `🛡️ Squadra: ${teamName}%0A` +
-    `👥 Giocatori (${filledCount}):%0A${playersList}%0A` +
-    `🎨 Logo: ${logoTesto}%0A` +
-    `━━━━━━━━━━━━━━━━`;
+ const messaggio = 
+  `⚽ NUOVA ISCRIZIONE TORNEO 2026 %0A` +
+  `━━━━━━━━━━━━━━━━%0A` +
+  `🛡️ Squadra: ${teamName}%0A` +
+  `📞 Telefono: ${phone}%0A` +  
+  `👥 Giocatori (${filledCount}):%0A${playersList}%0A` +
+  `🎨 Logo: ${logoTesto}%0A` +
+  `━━━━━━━━━━━━━━━━`;
 
-  const tuoNumero = '3478345014'; 
+  const tuoNumero = '393478345014'; 
   const apiKey = '5077846';  
 
   try {
@@ -54,6 +55,7 @@ export default function RegistrationPopup({ onClose }) {
     console.log('WhatsApp inviato');
   }
 
+  setLoading(false); 
   setSubmitted(true);
 };
   return (
