@@ -29,13 +29,13 @@ export default function RegistrationPopup({ onClose }) {
     .join('%0A');
 
   const logoTesto = logoChoice === 'no' 
-    ? 'NO - creare logo' 
+    ? 'NO - creami il logo perfavore' 
     : logoChoice === 'si' 
-    ? 'SI - ha gia logo' 
+    ? 'SI - ho gia il mio logo' 
     : 'Non specificato';
 
  const messaggio = 
-  `⚽ NUOVA ISCRIZIONE TORNEO 2026 %0A` +
+  `⚽ NUOVA ISCRIZIONE TORNEO SOTTO L'OROLOGIO 2026 %0A` +
   `━━━━━━━━━━━━━━━━%0A` +
   `🛡️ Squadra: ${teamName}%0A` +
   `📞 Telefono: ${phone}%0A` +  
@@ -43,7 +43,7 @@ export default function RegistrationPopup({ onClose }) {
   `🎨 Logo: ${logoTesto}%0A` +
   `━━━━━━━━━━━━━━━━`;
 
-  const tuoNumero = '393478345014'; 
+  const tuoNumero = ' +393478345014'; 
   const apiKey = '5077846';  
 
   try {
