@@ -42,8 +42,8 @@ export default function RegistrationPopup({ onClose }) {
     `🎨 Logo: ${logoTesto}%0A` +
     `━━━━━━━━━━━━━━━━`;
 
-  const tuoNumero = '3478345014'; // es. 393331234567
-  const apiKey = 'INSERISCI_TUA_API_KEY';   // es. 123456
+  const tuoNumero = '3478345014'; 
+  const apiKey = '5077846';  
 
   try {
     await fetch(
