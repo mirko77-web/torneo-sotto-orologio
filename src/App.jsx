@@ -122,6 +122,7 @@ useEffect(() => {
           <div className="event-info">
             <p className="event-date">16 · 17 · 18 · 19 LUGLIO 2026</p>
             <p className="event-place">AVETRANA (TA)</p>
+            <p className="event-location">PIAZZA VITTORIO VENETO</p>
           </div>
         </div>
       </section>
