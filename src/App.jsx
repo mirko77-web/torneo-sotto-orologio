@@ -132,7 +132,7 @@ useEffect(() => {
         <div className="section-inner">
           <h2 className="section-title">Chi Siamo</h2>
           <p className="section-text">
-            Il Torneo Sotto l'Orologio è un evento nato ad Avetrana con l'obiettivo
+            Il torneo Sotto l'Orologio è un evento nato ad Avetrana con l'obiettivo
             di unire sport, musica e cultura. Una manifestazione che celebra i valori
             del rispetto, dell'amicizia e della passione per il calcio.
             Dalla strada, per la strada.
