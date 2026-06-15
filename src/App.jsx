@@ -36,8 +36,15 @@ const regole = [
 const sponsors = [
   { id: 1, name: "Sponsor 1", logo: "/sponsor1.jpg" },
   { id: 2, name: "Sponsor 2", logo: "/sponsor2.png" },
-  { id: 3, name: "Sponsor 3", logo: "/sponsor3.jpg" },
-  { id: 4, name: "Sponsor 4", logo: "/sponsor4.png" },
+  { id: 3, name: "Sponsor 3", logo: "/images.png" },
+  { id: 4, name: "Sponsor 4", logo: "/sponsor.jpg" },
+  { id: 5, name: "Sponsor 5", logo: "" },
+  { id: 6, name: "Sponsor 6", logo: "" },
+  { id: 7, name: "Sponsor 7", logo: "" },
+  { id: 8, name: "Sponsor 8", logo: ""}, 
+  { id: 9, name: "Sponsor 9", logo: "" },
+  { id: 10, name: "Sponsor 10", logo: "" },
+  
 ];
 
 const alboDoro2025 = {
@@ -149,7 +156,7 @@ useEffect(() => {
           <h2 className="section-title">LOCANDINA 2026</h2>
           <p className="section-text">TORNEO SOTTO L'OROLOGIO 2026</p>
           <div className="locandina-container">
-            <img src="/SECONDO TORNEO.jpg" width={800} alt="Locandina Ufficiale 2026" className="locandina-img" />
+            <img src="/locand.jpg" width={800} alt="Locandina Ufficiale 2026" className="locandina-img" />
           </div>
         </div>
       </section>
@@ -248,7 +255,7 @@ useEffect(() => {
     <div className="main-sponsor">
       <h3 className="main-sponsor-title">Main Sponsor</h3>
       <div className="main-sponsor-logo">
-       <img src="/sponsor.jpg" alt={sponsors[0].name} />
+       <img src="/panzuto.png" alt={sponsors[0].name} />
       </div>
     </div>
           <div className="sponsor-grid">
