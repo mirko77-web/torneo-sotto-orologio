@@ -38,13 +38,15 @@ const sponsors = [
   { id: 2, name: "Sponsor 2", logo: "/sponsor2.png" },
   { id: 3, name: "Sponsor 3", logo: "/images.png" },
   { id: 4, name: "Sponsor 4", logo: "/sponsor.jpg" },
-  { id: 5, name: "Sponsor 5", logo: "" },
-  { id: 6, name: "Sponsor 6", logo: "" },
-  { id: 7, name: "Sponsor 7", logo: "" },
-  { id: 8, name: "Sponsor 8", logo: ""}, 
-  { id: 9, name: "Sponsor 9", logo: "" },
-  { id: 10, name: "Sponsor 10", logo: "" },
-  
+  { id: 5, name: "Sponsor 5", logo: "/volpe.png" },
+  { id: 6, name: "Sponsor 6", logo: "/spedicato.jpeg" },
+  { id: 7, name: "Sponsor 7", logo: "/baguetteria.png" },
+  { id: 8, name: "Sponsor 8", logo: "/pizzeria-birreria-food.jpg"}, 
+  { id: 9, name: "Sponsor 9", logo: "/dent.png" },
+  { id: 10, name: "Sponsor 10", logo: "/OIP.webp" },
+  { id: 11, name: "Sponsor 11", logo: "/sponsor11.jpg" },
+  { id: 12, name: "Sponsor 12", logo: "/sponsor12.jpg" },
+  { id: 13, name: "Sponsor 13", logo: "/sponsor13.jpg" },
 ];
 
 const alboDoro2025 = {
