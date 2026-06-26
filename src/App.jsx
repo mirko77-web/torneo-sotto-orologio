@@ -35,7 +35,7 @@ const regole = [
 
 const sponsors = [
   { id: 1, name: "Sponsor 1", logo: "/sponsor1.jpg" },
-  { id: 2, name: "Sponsor 2", logo: "/sponsor2.png" },
+  { id: 2, name: "Sponsor 2", logo: "/carr.jpg" },
   { id: 3, name: "Sponsor 3", logo: "/images.png" },
   { id: 4, name: "Sponsor 4", logo: "/sponsor.jpg" },
   { id: 5, name: "Sponsor 5", logo: "/volpe.png" },
@@ -44,9 +44,16 @@ const sponsors = [
   { id: 8, name: "Sponsor 8", logo: "/pizzeria-birreria-food.jpg"}, 
   { id: 9, name: "Sponsor 9", logo: "/dent.png" },
   { id: 10, name: "Sponsor 10", logo: "/OIP.webp" },
-  { id: 11, name: "Sponsor 11", logo: "/sponsor11.jpg" },
-  { id: 12, name: "Sponsor 12", logo: "/sponsor12.jpg" },
-  { id: 13, name: "Sponsor 13", logo: "/sponsor13.jpg" },
+  { id: 11, name: "Sponsor 11", logo: "/labo.png" },
+  { id: 12, name: "Sponsor 12", logo: "/longo.jpg" },
+  { id: 13, name: "Sponsor 13", logo: "/macel.png" },
+  { id: 14, name: "Sponsor 14", logo: "" },
+  { id: 15, name: "Sponsor 15", logo: "" },
+  { id: 16, name: "Sponsor 16", logo: "" },
+  { id: 17, name: "Sponsor 17", logo: "" },
+  { id: 18, name: "Sponsor 18", logo: "" },
+  { id: 19, name: "Sponsor 19", logo: "" },
+  { id: 20, name: "Sponsor 20", logo: "" },
 ];
 
 const alboDoro2025 = {
@@ -259,8 +266,10 @@ useEffect(() => {
       <h3 className="main-sponsor-title">Main Sponsor</h3>
       <div className="main-sponsor-logo">
        <img src="/panzuto.png" alt={sponsors[0].name} />
+       <img src="/sponsor2.png" alt={sponsors[0].name} />
       </div>
     </div>
+     <h3 className="main-sponsor-title">Official Sponsor</h3>
           <div className="sponsor-grid">
             {sponsors.map(s => (
               <div key={s.id} className="sponsor-card">
